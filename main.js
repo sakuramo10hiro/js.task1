@@ -34,6 +34,7 @@ function stopWatch(){
 
 //disabled ボタン活性・非活性
 
+ //スタートボタンを押した時
   start.addEventListener("click", () => {
   timerID = setInterval(stopWatch, 100);
   start.disabled = true;
@@ -41,13 +42,14 @@ function stopWatch(){
   reset.disabled = false;
 });
 
+ //ストップボタンを押した時
 stop.addEventListener("click", () =>{
   clearInterval(timerID);
   stop.disabled = true;
   start.disabled = false;
   reset.disabled = false;
 });
-
+ //リセットボタンを押した時
 reset.addEventListener("click", function(){
   clearInterval(timerID);
   timer.innerHTML = "0:0:0:0";
